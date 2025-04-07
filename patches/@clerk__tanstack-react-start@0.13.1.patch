@@ -1,20 +1,21 @@
 diff --git a/dist/server/authenticateRequest.js b/dist/server/authenticateRequest.js
-index b3662cd26117ee55a8e9ddacf1810aa55e5c1b15..4b3e61cb6421f5817c4b99ae2305d9453e74d864 100644
+index b3662cd26117ee55a8e9ddacf1810aa55e5c1b15..ec24c504ac9dcac85c89fbd06135a7eaf1ed3089 100644
 --- a/dist/server/authenticateRequest.js
 +++ b/dist/server/authenticateRequest.js
-@@ -27,11 +27,15 @@ async function authenticateRequest(request, opts) {
+@@ -25,8 +25,14 @@ async function authenticateRequest(request, opts) {
+     afterSignInUrl,
+     afterSignUpUrl
    });
-   const hasLocationHeader = requestState.headers.get("location");
-   if (hasLocationHeader) {
-+    requestState.headers.set('Netlify-Vary', 'cookie=__client|__session');
-+    requestState.headers.set('X-Debug-Request', 'true');
-+    requestState.headers.set('Cache-Control', 'no-store');
+-  const hasLocationHeader = requestState.headers.get("location");
+-  if (hasLocationHeader) {
++  const locationHeader = requestState.headers.get("location");
++  if (locationHeader) {
++    const hasHandshakeQueryParam = locationHeader.includes('__clerk_handshake');
++    if (!hasHandshakeQueryParam) {
++      const url = new URL(locationHeader);
++      url.searchParams.append('__netlify_cache_bust', Date.now().toString());
++      requestState.headers.set('Location', url.toString());
++    }
      throw new Response(null, { status: 307, headers: requestState.headers });
    }
    if (requestState.status === AuthStatus.Handshake) {
-     throw errorThrower.throw("Clerk: unexpected handshake without redirect");
-   }
-+  requestState.headers.set('Netlify-Vary', 'cookie=__client|__session');
-   return requestState;
- }
- 
