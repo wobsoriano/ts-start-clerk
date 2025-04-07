@@ -1,0 +1,12 @@
+diff --git a/dist/server/authenticateRequest.js b/dist/server/authenticateRequest.js
+index b3662cd26117ee55a8e9ddacf1810aa55e5c1b15..664bc2bed7bc8c094fc9410a6264553ea2110c6d 100644
+--- a/dist/server/authenticateRequest.js
++++ b/dist/server/authenticateRequest.js
+@@ -27,6 +27,7 @@ async function authenticateRequest(request, opts) {
+   });
+   const hasLocationHeader = requestState.headers.get("location");
+   if (hasLocationHeader) {
++    requestState.headers.set('Netlify-Vary', 'cookie=__client|__session');
+     throw new Response(null, { status: 307, headers: requestState.headers });
+   }
+   if (requestState.status === AuthStatus.Handshake) {
