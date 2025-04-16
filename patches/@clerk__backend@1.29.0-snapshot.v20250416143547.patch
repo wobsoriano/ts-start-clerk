@@ -1,26 +1,28 @@
 diff --git a/dist/chunk-JILQO6JJ.mjs b/dist/chunk-JILQO6JJ.mjs
-index 586a012ab8fdf5ba821a6d2d4459589a3edd8d6e..b5871d18da860ded198b279898d958a63f1fca41 100644
+index 586a012ab8fdf5ba821a6d2d4459589a3edd8d6e..513bbf3056bef83289936b0fe7b0a0fb448e032c 100644
 --- a/dist/chunk-JILQO6JJ.mjs
 +++ b/dist/chunk-JILQO6JJ.mjs
-@@ -3309,7 +3309,7 @@ ${error.getFullMessage()}`
+@@ -3309,8 +3309,8 @@ ${error.getFullMessage()}`
    function handleMaybeHandshakeStatus(authenticateContext2, reason, message, headers) {
      if (isRequestEligibleForHandshake(authenticateContext2)) {
        const handshakeHeaders = headers ?? buildRedirectToHandshake({ handshakeReason: reason });
 -      handshakeHeaders.set("Netlify-Vary", "cookie=__client|__session");
-+      handshakeHeaders.set("Netlify-Vary", "cookie,query");
        if (handshakeHeaders.get(constants.Headers.Location)) {
++        handshakeHeaders.set("Netlify-Vary", `header=${constants.Headers.Location}`);
          handshakeHeaders.set(constants.Headers.CacheControl, "no-store");
        }
+       const isRedirectLoop = setHandshakeInfiniteRedirectionLoopHeaders(handshakeHeaders);
 diff --git a/dist/index.js b/dist/index.js
-index e78b8181a0df838aa75316eaa73d98463b0b5d75..650ffc201dfc78142ea86d155c964ef8dd6172f1 100644
+index e78b8181a0df838aa75316eaa73d98463b0b5d75..37e4c83a92b483a14f4b08791be7a76ea378199d 100644
 --- a/dist/index.js
 +++ b/dist/index.js
-@@ -3771,7 +3771,7 @@ ${error.getFullMessage()}`
+@@ -3771,8 +3771,8 @@ ${error.getFullMessage()}`
    function handleMaybeHandshakeStatus(authenticateContext2, reason, message, headers) {
      if (isRequestEligibleForHandshake(authenticateContext2)) {
        const handshakeHeaders = headers ?? buildRedirectToHandshake({ handshakeReason: reason });
 -      handshakeHeaders.set("Netlify-Vary", "cookie=__client|__session");
-+      handshakeHeaders.set("Netlify-Vary", "cookie,query");
        if (handshakeHeaders.get(constants.Headers.Location)) {
++        handshakeHeaders.set("Netlify-Vary", `header=${constants.Headers.Location}`);
          handshakeHeaders.set(constants.Headers.CacheControl, "no-store");
        }
+       const isRedirectLoop = setHandshakeInfiniteRedirectionLoopHeaders(handshakeHeaders);
