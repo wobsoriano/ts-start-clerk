@@ -6,10 +6,10 @@ settings:
 
 patchedDependencies:
   '@clerk/backend@1.29.0-snapshot.v20250416143547':
-    hash: 6105d8833d7e00749c6dc4eb302061df2b1cc9096e31dc7dc64a58bb1ca19bf5
+    hash: ecd348a63c6fe2709ea08d588b4505aca29dcfec318972e4469321d5f677a9f4
     path: patches/@clerk__backend@1.29.0-snapshot.v20250416143547.patch
   '@clerk/tanstack-react-start@0.13.6-snapshot.v20250416143547':
-    hash: 6bb24349f7eaeadbc7c6ceb50fa417079446ef53d55f1606cc1748a3853490a4
+    hash: dcaa367e42808db3b5611ec936510be301071cc2fdd90c85150e9d05d7b4553d
     path: patches/@clerk__tanstack-react-start@0.13.6-snapshot.v20250416143547.patch
 
 importers:
@@ -18,10 +18,10 @@ importers:
     dependencies:
       '@clerk/backend':
         specifier: 1.29.0-snapshot.v20250416143547
-        version: 1.29.0-snapshot.v20250416143547(patch_hash=6105d8833d7e00749c6dc4eb302061df2b1cc9096e31dc7dc64a58bb1ca19bf5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 1.29.0-snapshot.v20250416143547(patch_hash=ecd348a63c6fe2709ea08d588b4505aca29dcfec318972e4469321d5f677a9f4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@clerk/tanstack-react-start':
         specifier: 0.13.6-snapshot.v20250416143547
-        version: 0.13.6-snapshot.v20250416143547(patch_hash=6bb24349f7eaeadbc7c6ceb50fa417079446ef53d55f1606cc1748a3853490a4)(@tanstack/react-router@1.116.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@tanstack/react-start@1.116.1(@netlify/blobs@8.2.0)(@tanstack/react-router@1.116.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@types/node@22.14.1)(babel-plugin-macros@3.1.0)(db0@0.3.1)(ioredis@5.6.1)(jiti@2.4.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(terser@5.39.0)(tsx@4.19.3)(vite@6.3.0(@types/node@22.14.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 0.13.6-snapshot.v20250416143547(patch_hash=dcaa367e42808db3b5611ec936510be301071cc2fdd90c85150e9d05d7b4553d)(@tanstack/react-router@1.116.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@tanstack/react-start@1.116.1(@netlify/blobs@8.2.0)(@tanstack/react-router@1.116.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@types/node@22.14.1)(babel-plugin-macros@3.1.0)(db0@0.3.1)(ioredis@5.6.1)(jiti@2.4.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(terser@5.39.0)(tsx@4.19.3)(vite@6.3.0(@types/node@22.14.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@tanstack/react-router':
         specifier: ^1.114.29
         version: 1.116.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -6135,7 +6135,7 @@ snapshots:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
-  '@clerk/backend@1.29.0-snapshot.v20250416143547(patch_hash=6105d8833d7e00749c6dc4eb302061df2b1cc9096e31dc7dc64a58bb1ca19bf5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@clerk/backend@1.29.0-snapshot.v20250416143547(patch_hash=ecd348a63c6fe2709ea08d588b4505aca29dcfec318972e4469321d5f677a9f4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@clerk/shared': 3.7.1-snapshot.v20250416143547(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@clerk/types': 4.54.1-snapshot.v20250416143547
@@ -6166,9 +6166,9 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  '@clerk/tanstack-react-start@0.13.6-snapshot.v20250416143547(patch_hash=6bb24349f7eaeadbc7c6ceb50fa417079446ef53d55f1606cc1748a3853490a4)(@tanstack/react-router@1.116.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@tanstack/react-start@1.116.1(@netlify/blobs@8.2.0)(@tanstack/react-router@1.116.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@types/node@22.14.1)(babel-plugin-macros@3.1.0)(db0@0.3.1)(ioredis@5.6.1)(jiti@2.4.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(terser@5.39.0)(tsx@4.19.3)(vite@6.3.0(@types/node@22.14.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@clerk/tanstack-react-start@0.13.6-snapshot.v20250416143547(patch_hash=dcaa367e42808db3b5611ec936510be301071cc2fdd90c85150e9d05d7b4553d)(@tanstack/react-router@1.116.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@tanstack/react-start@1.116.1(@netlify/blobs@8.2.0)(@tanstack/react-router@1.116.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@types/node@22.14.1)(babel-plugin-macros@3.1.0)(db0@0.3.1)(ioredis@5.6.1)(jiti@2.4.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(terser@5.39.0)(tsx@4.19.3)(vite@6.3.0(@types/node@22.14.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@clerk/backend': 1.29.0-snapshot.v20250416143547(patch_hash=6105d8833d7e00749c6dc4eb302061df2b1cc9096e31dc7dc64a58bb1ca19bf5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@clerk/backend': 1.29.0-snapshot.v20250416143547(patch_hash=ecd348a63c6fe2709ea08d588b4505aca29dcfec318972e4469321d5f677a9f4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@clerk/clerk-react': 5.28.1-snapshot.v20250416143547(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@clerk/shared': 3.7.1-snapshot.v20250416143547(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@clerk/types': 4.54.1-snapshot.v20250416143547

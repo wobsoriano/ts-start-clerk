@@ -1,17 +1,20 @@
 diff --git a/dist/chunk-JILQO6JJ.mjs b/dist/chunk-JILQO6JJ.mjs
-index 586a012ab8fdf5ba821a6d2d4459589a3edd8d6e..5afd3b2814fa353538709005ae53613c1137a01e 100644
+index 586a012ab8fdf5ba821a6d2d4459589a3edd8d6e..9870ad91937012c6c1cb331f32b66823b302ba49 100644
 --- a/dist/chunk-JILQO6JJ.mjs
 +++ b/dist/chunk-JILQO6JJ.mjs
-@@ -3308,8 +3308,7 @@ ${error.getFullMessage()}`
+@@ -3307,10 +3307,11 @@ ${error.getFullMessage()}`
+     return { data: { jwtPayload, sessionToken, headers }, error: null };
    }
    function handleMaybeHandshakeStatus(authenticateContext2, reason, message, headers) {
++
      if (isRequestEligibleForHandshake(authenticateContext2)) {
--      const handshakeHeaders = headers ?? buildRedirectToHandshake({ handshakeReason: reason });
+       const handshakeHeaders = headers ?? buildRedirectToHandshake({ handshakeReason: reason });
 -      handshakeHeaders.set("Netlify-Vary", "cookie=__client|__session");
-+      const handshakeHeaders = headers ?? buildRedirectToHandshake({ handshakeReason: reason });handshakeHeaders.set("Netlify-Vary", `header=${constants.Headers.Location},cookie=__session|__client|__client_uat|__clerk_db_jwt,query=__clerk_handshake`);
        if (handshakeHeaders.get(constants.Headers.Location)) {
++        handshakeHeaders.set("Netlify-Vary", `header=x-clerk-auth-status|x-clerk-auth-reason`);
          handshakeHeaders.set(constants.Headers.CacheControl, "no-store");
        }
+       const isRedirectLoop = setHandshakeInfiniteRedirectionLoopHeaders(handshakeHeaders);
 diff --git a/dist/index.js b/dist/index.js
 index e78b8181a0df838aa75316eaa73d98463b0b5d75..37c57d6538f531b55a9ca0bfdc020058fc641f50 100644
 --- a/dist/index.js
