@@ -39,7 +39,8 @@
       "esbuild"
     ],
     "patchedDependencies": {
-      "@clerk/backend@1.29.0-snapshot.v20250416143547": "patches/@clerk__backend@1.29.0-snapshot.v20250416143547.patch"
+      "@clerk/backend@1.29.0-snapshot.v20250416143547": "patches/@clerk__backend@1.29.0-snapshot.v20250416143547.patch",
+      "@clerk/tanstack-react-start@0.13.6-snapshot.v20250416143547": "patches/@clerk__tanstack-react-start@0.13.6-snapshot.v20250416143547.patch"
     }
   }
 }

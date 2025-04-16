@@ -1,0 +1,16 @@
+diff --git a/dist/server/middlewareHandler.js b/dist/server/middlewareHandler.js
+index 398aeeaa862b6b019d124b29ffa5c776069381ed..e7b8b37fa7f1f76d298c4bc9b2d0dfbfc4d554f8 100644
+--- a/dist/server/middlewareHandler.js
++++ b/dist/server/middlewareHandler.js
+@@ -13,6 +13,11 @@ function createClerkHandler(eventHandler, clerkOptions = {}) {
+         router.update({
+           context: { ...router.options.context, ...clerkInitialState }
+         });
++        if (requestState.headers) {
++          requestState.headers.forEach((value, key) => {
++            responseHeaders.set(key, value)
++          })
++        }
+         await router.load();
+       } catch (error) {
+         if (error instanceof Response) {
