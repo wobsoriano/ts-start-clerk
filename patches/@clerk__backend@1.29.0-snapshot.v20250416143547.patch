@@ -1,28 +1,30 @@
 diff --git a/dist/chunk-JILQO6JJ.mjs b/dist/chunk-JILQO6JJ.mjs
-index 586a012ab8fdf5ba821a6d2d4459589a3edd8d6e..513bbf3056bef83289936b0fe7b0a0fb448e032c 100644
+index 586a012ab8fdf5ba821a6d2d4459589a3edd8d6e..01d3d35a8448db093d72a86f882d54b597706a9d 100644
 --- a/dist/chunk-JILQO6JJ.mjs
 +++ b/dist/chunk-JILQO6JJ.mjs
-@@ -3309,8 +3309,8 @@ ${error.getFullMessage()}`
+@@ -3309,8 +3309,9 @@ ${error.getFullMessage()}`
    function handleMaybeHandshakeStatus(authenticateContext2, reason, message, headers) {
      if (isRequestEligibleForHandshake(authenticateContext2)) {
        const handshakeHeaders = headers ?? buildRedirectToHandshake({ handshakeReason: reason });
 -      handshakeHeaders.set("Netlify-Vary", "cookie=__client|__session");
        if (handshakeHeaders.get(constants.Headers.Location)) {
-+        handshakeHeaders.set("Netlify-Vary", `header=${constants.Headers.Location}`);
++        handshakeHeaders.set("Netlify-Vary", `header=${constants.Headers.Location},cookie=__session|__client,query=__clerk_handshake`);
++        handshakeHeaders.set("Netlify-CDN-Cache-Control", 'no-store');
          handshakeHeaders.set(constants.Headers.CacheControl, "no-store");
        }
        const isRedirectLoop = setHandshakeInfiniteRedirectionLoopHeaders(handshakeHeaders);
 diff --git a/dist/index.js b/dist/index.js
-index e78b8181a0df838aa75316eaa73d98463b0b5d75..37e4c83a92b483a14f4b08791be7a76ea378199d 100644
+index e78b8181a0df838aa75316eaa73d98463b0b5d75..e45c4059dc617fb0caf79720187aca9c02ae400f 100644
 --- a/dist/index.js
 +++ b/dist/index.js
-@@ -3771,8 +3771,8 @@ ${error.getFullMessage()}`
+@@ -3771,8 +3771,9 @@ ${error.getFullMessage()}`
    function handleMaybeHandshakeStatus(authenticateContext2, reason, message, headers) {
      if (isRequestEligibleForHandshake(authenticateContext2)) {
        const handshakeHeaders = headers ?? buildRedirectToHandshake({ handshakeReason: reason });
 -      handshakeHeaders.set("Netlify-Vary", "cookie=__client|__session");
        if (handshakeHeaders.get(constants.Headers.Location)) {
-+        handshakeHeaders.set("Netlify-Vary", `header=${constants.Headers.Location}`);
++        handshakeHeaders.set("Netlify-Vary", `header=${constants.Headers.Location},cookie=__session|__client,query=__clerk_handshake`);
++        handshakeHeaders.set("Netlify-CDN-Cache-Control", 'no-store');
          handshakeHeaders.set(constants.Headers.CacheControl, "no-store");
        }
        const isRedirectLoop = setHandshakeInfiniteRedirectionLoopHeaders(handshakeHeaders);
