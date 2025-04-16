@@ -1,11 +1,12 @@
 diff --git a/dist/server/authenticateRequest.js b/dist/server/authenticateRequest.js
-index 0d4709a65c032bc5dfc3595fe9aeeb94aae28ea6..a6faffb42db34a7afa223430912c05832376118c 100644
+index 0d4709a65c032bc5dfc3595fe9aeeb94aae28ea6..abfe695bd2d42860d1b6dd447f3c94964b15fd22 100644
 --- a/dist/server/authenticateRequest.js
 +++ b/dist/server/authenticateRequest.js
-@@ -27,6 +27,12 @@ async function authenticateRequest(request, opts) {
+@@ -27,6 +27,13 @@ async function authenticateRequest(request, opts) {
    });
    const hasLocationHeader = requestState.headers.get("location");
    if (hasLocationHeader) {
++    console.log('hasLocationHeader', hasLocationHeader)
 +    const hasHandshakeQueryParam = hasLocationHeader.includes('__clerk_handshake');
 +    if (!hasHandshakeQueryParam) {
 +      const url = new URL(hasLocationHeader);
