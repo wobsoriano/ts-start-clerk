@@ -1,16 +1,19 @@
 diff --git a/dist/chunk-JILQO6JJ.mjs b/dist/chunk-JILQO6JJ.mjs
-index 586a012ab8fdf5ba821a6d2d4459589a3edd8d6e..e2e23fc3a7238e54faac5074e2f23a47241563ce 100644
+index 586a012ab8fdf5ba821a6d2d4459589a3edd8d6e..b777cc131f232ca870575d9ca39fd5bbca411ce2 100644
 --- a/dist/chunk-JILQO6JJ.mjs
 +++ b/dist/chunk-JILQO6JJ.mjs
-@@ -3309,8 +3309,13 @@ ${error.getFullMessage()}`
+@@ -3309,8 +3309,16 @@ ${error.getFullMessage()}`
    function handleMaybeHandshakeStatus(authenticateContext2, reason, message, headers) {
      if (isRequestEligibleForHandshake(authenticateContext2)) {
        const handshakeHeaders = headers ?? buildRedirectToHandshake({ handshakeReason: reason });
 -      handshakeHeaders.set("Netlify-Vary", "cookie=__client|__session");
        if (handshakeHeaders.get(constants.Headers.Location)) {
-+        const url = new URL(handshakeHeaders.get(constants.Headers.Location));
-+        url.searchParams.append('cache_bust_netlify', Date.now().toString());
-+        handshakeHeaders.set(constants.Headers.Location, url.toString())
++        const locationHeader = handshakeHeaders.get(constants.Headers.Location)
++        if (!locationHeader.includes('__clerk_handshake')) {
++          const url = new URL(locationHeader);
++          url.searchParams.append('cache_bust_netlify', Date.now().toString());
++          handshakeHeaders.set(constants.Headers.Location, url.toString())
++        }
 +        // handshakeHeaders.set("Netlify-Vary", `header=${constants.Headers.Location},cookie=__session|__client|__client_uat|__clerk_db_jwt,query=__clerk_handshake`);
 +        // handshakeHeaders.set("Netlify-CDN-Cache-Control", 'no-store');
 +
