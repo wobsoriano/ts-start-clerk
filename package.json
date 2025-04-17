@@ -11,7 +11,7 @@
     "format": "prettier --write '**/*' --ignore-unknown"
   },
   "dependencies": {
-    "@clerk/tanstack-react-start": "0.13.7-snapshot.v20250417024617",
+    "@clerk/tanstack-react-start": "0.13.7-snapshot.v20250417032557",
     "@tanstack/react-router": "^1.114.29",
     "@tanstack/react-start": "^1.114.29",
     "@tanstack/router-devtools": "^1.114.29",
@@ -36,9 +36,6 @@
       "@clerk/shared",
       "@parcel/watcher",
       "esbuild"
-    ],
-    "patchedDependencies": {
-      "@clerk/tanstack-react-start@0.13.7-snapshot.v20250417024617": "patches/@clerk__tanstack-react-start@0.13.7-snapshot.v20250417024617.patch"
-    }
+    ]
   }
 }
