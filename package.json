@@ -36,6 +36,9 @@
       "@clerk/shared",
       "@parcel/watcher",
       "esbuild"
-    ]
+    ],
+    "patchedDependencies": {
+      "@clerk/tanstack-react-start@0.13.7-snapshot.v20250417024617": "patches/@clerk__tanstack-react-start@0.13.7-snapshot.v20250417024617.patch"
+    }
   }
 }
