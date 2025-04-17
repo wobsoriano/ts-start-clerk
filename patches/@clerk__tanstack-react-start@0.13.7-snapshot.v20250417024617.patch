@@ -1,5 +1,5 @@
 diff --git a/dist/server/authenticateRequest.js b/dist/server/authenticateRequest.js
-index d9f71ad52955200e4e552c8fc2c0ed890784603a..439a0eaeca3524af54335f658483a16214305478 100644
+index d9f71ad52955200e4e552c8fc2c0ed890784603a..18a6a880aa83ace99517483d1cc28f53a13bc703 100644
 --- a/dist/server/authenticateRequest.js
 +++ b/dist/server/authenticateRequest.js
 @@ -3,6 +3,7 @@ import { constants, AuthStatus } from '@clerk/backend/internal';
@@ -10,7 +10,7 @@ index d9f71ad52955200e4e552c8fc2c0ed890784603a..439a0eaeca3524af54335f658483a162
  
  // src/server/authenticateRequest.ts
  async function authenticateRequest(request, opts) {
-@@ -26,10 +27,12 @@ async function authenticateRequest(request, opts) {
+@@ -26,10 +27,11 @@ async function authenticateRequest(request, opts) {
      afterSignInUrl,
      afterSignUpUrl
    });
@@ -20,7 +20,6 @@ index d9f71ad52955200e4e552c8fc2c0ed890784603a..439a0eaeca3524af54335f658483a162
 +    console.log('event.context', event.context)
      console.log("is on netlify process.env.NETLIFY", process.env.NETLIFY);
 -    console.log("is on netlify import.meta.env.NETLIFY", import.meta.env.NETLIFY);
-+    console.log("is on netlify import.meta.env.NETLIFY", import.meta?.env?.NETLIFY);
      handleNetlifyCacheInDevInstance({
        locationHeader,
        requestStateHeaders: requestState.headers,
